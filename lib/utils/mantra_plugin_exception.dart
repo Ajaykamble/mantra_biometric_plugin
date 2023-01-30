@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 
-abstract class AppException implements Exception {
+abstract class MantraPluginAppException implements Exception {
   String? code;
   String? message;
   String? description;
 
-  AppException([this.code,this.message,this.description]):super();
+  MantraPluginAppException([this.code,this.message,this.description]):super();
 
   @override
   String toString() {
@@ -15,6 +15,6 @@ abstract class AppException implements Exception {
   Map<String,dynamic> toJson()=>{"code":code??"","message":message??"","description":description??""};
 }
 
-class ClientNotFound extends AppException {
+class ClientNotFound extends MantraPluginAppException {
   ClientNotFound([String? code,String? message,String? description]) : super(code,message,description);
 }
