@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:3.4.0'
     }
 }
 
@@ -32,4 +32,7 @@ android {
     defaultConfig {
         minSdkVersion 16
     }
+}
+dependencies {
+    implementation files('C:\\flutter\\bin\\cache\\artifacts\\engine\\android-arm64-release\\flutter.jar')
 }
