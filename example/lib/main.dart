@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
 
   scanFingurePrint() async {
     try {
-      String wadh = "E0jzJ/P8UopUHAieZn8CKqS4WPMi5ZSYXgfnlfkWjrc=";
+      String wadh = "";
       String pidOptions =
           "<PidOptions ver=\"1.0\"> <Opts fCount=\"1\" fType=\"2\" pCount=\"0\" format=\"0\" pidVer=\"2.0\" wadh=\"$wadh\" timeout=\"20000\"  posh=\"UNKNOWN\" env=\"P\" /> </PidOptions>";
       result = await _mantraBiometricPlugin.captureFingurePrint(pidOptions: pidOptions) ?? "";
