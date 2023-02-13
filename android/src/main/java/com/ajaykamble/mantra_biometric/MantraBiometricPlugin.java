@@ -1,6 +1,8 @@
 package com.ajaykamble.mantra_biometric;
 
 
+import static org.json.JSONObject.wrap;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
+import org.json.*;
 
 /** MantraBiometricPlugin */
 public class MantraBiometricPlugin implements FlutterPlugin, MethodCallHandler , ActivityAware, PluginRegistry.ActivityResultListener{
@@ -111,10 +114,7 @@ public class MantraBiometricPlugin implements FlutterPlugin, MethodCallHandler ,
               result.error("Error", "Unable to fetch device Information", "Unable to fetch device Information");
             }
             else {
-              Map<String,String> map= new HashMap<String,String>();
-              map.put("device_info",device_info);
-              map.put("rd_service_info",rdService);
-              result.success(map);
+              result.success(rdService);
             }
           } catch (Exception e) {
             result.error( "Error","Something Went Wrong", e.getMessage());
@@ -144,5 +144,32 @@ public class MantraBiometricPlugin implements FlutterPlugin, MethodCallHandler ,
     }
 
     return false;
+  }
+  public static JSONObject mapToJson(Map<?, ?> data)
+  {
+    JSONObject object = new JSONObject();
+
+    for (Map.Entry<?, ?> entry : data.entrySet())
+    {
+      /*
+       * Deviate from the original by checking that keys are non-null and
+       * of the proper type. (We still defer validating the values).
+       */
+      String key = (String) entry.getKey();
+      if (key == null)
+      {
+        throw new NullPointerException("key == null");
+      }
+      try
+      {
+        object.put(key, wrap(entry.getValue()));
+      }
+      catch (JSONException e)
+      {
+        e.printStackTrace();
+      }
+    }
+
+    return object;
   }
 }

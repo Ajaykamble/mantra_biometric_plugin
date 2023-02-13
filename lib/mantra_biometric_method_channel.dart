@@ -15,8 +15,8 @@ class MethodChannelMantraBiometric extends MantraBiometricPlatform {
     return result;
   }
   @override
-  Future<Map<String,dynamic>?> getDeviceInfo() async {
-    final result = await methodChannel.invokeMethod<Map<String,dynamic>>('getDeviceInfo');
+  Future<String?> getDeviceInfo() async {
+    final result = await methodChannel.invokeMethod<String>('getDeviceInfo');
     return result;
   }
 }

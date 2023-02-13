@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 
 import 'package:mantra_biometric/mantra_biometric.dart';
 import 'package:mantra_biometric/utils/mantra_plugin_exception.dart';
+import 'package:xml/xml.dart';
+import 'package:collection/collection.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(home: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -36,10 +38,10 @@ class _MyAppState extends State<MyApp> {
 
   getDeviceInfo() async {
     try {
-      result = jsonEncode(await _mantraBiometricPlugin.getDeviceInformation());
+      String output = await _mantraBiometricPlugin.getDeviceInformation() ?? "";
+      result = output;
       setState(() {});
-    } on ClientNotFound catch (e) {
-      log("${e.code}");
+    } on RDClientNotFound catch (e) {
       displyAlert("Install Clinet");
     } catch (e) {
       displyAlert("Something Went Wrong $e");
@@ -52,8 +54,9 @@ class _MyAppState extends State<MyApp> {
       String pidOptions =
           "<PidOptions ver=\"1.0\"> <Opts fCount=\"1\" fType=\"2\" pCount=\"0\" format=\"0\" pidVer=\"2.0\" wadh=\"$wadh\" timeout=\"20000\"  posh=\"UNKNOWN\" env=\"P\" /> </PidOptions>";
       result = await _mantraBiometricPlugin.captureFingurePrint(pidOptions: pidOptions) ?? "";
+      
       setState(() {});
-    } on ClientNotFound catch (e) {
+    } on RDClientNotFound catch (e) {
       log("${e.code}");
       displyAlert("Install Clinet");
     } catch (e) {
@@ -63,31 +66,29 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Mantra Biometric Example'),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              MaterialButton(
-                onPressed: getDeviceInfo,
-                child: const Text("Get Device Information"),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              MaterialButton(
-                onPressed: scanFingurePrint,
-                child: const Text("Scan Fingure Print"),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text("$result")
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mantra Biometric Example'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            MaterialButton(
+              onPressed: getDeviceInfo,
+              child: const Text("Get Device Information"),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              onPressed: scanFingurePrint,
+              child: const Text("Scan Fingure Print"),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text("$result")
+          ],
         ),
       ),
     );

@@ -34,5 +34,5 @@ android {
     }
 }
 dependencies {
-    implementation files('C:\\flutter\\bin\\cache\\artifacts\\engine\\android-arm64-release\\flutter.jar')
+    //implementation files('C:\\flutter\\bin\\cache\\artifacts\\engine\\android-arm64-release\\flutter.jar')
 }
