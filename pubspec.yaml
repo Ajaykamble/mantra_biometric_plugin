@@ -1,7 +1,7 @@
 name: mantra_biometric
 description: Mantra biometric plugin for authentication
 version: 0.0.1
-homepage:
+homepage: https://github.com/Ajaykamble/mantra_biometric_plugin.git
 
 environment:
   sdk: '>=2.19.0 <3.0.0'
