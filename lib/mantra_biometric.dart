@@ -1,4 +1,4 @@
-import 'dart:developer';
+// ignore_for_file: depend_on_referenced_packages
 
 import 'package:flutter/services.dart';
 import 'package:mantra_biometric/utils/mantra_plugin_exception.dart';
@@ -33,10 +33,8 @@ class MantraBiometric {
       switch (e.code) {
         case "ClientNotFound":
           throw RDClientNotFound(code, message, details);
-          break;
         default:
           rethrow;
-          break;
       }
     } catch (e) {
       rethrow;
@@ -54,10 +52,8 @@ class MantraBiometric {
       switch (e.code) {
         case "ClientNotFound":
           throw RDClientNotFound(code, message, details);
-          break;
         default:
           rethrow;
-          break;
       }
     } catch (e) {
       rethrow;

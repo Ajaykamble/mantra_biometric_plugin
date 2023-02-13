@@ -1,5 +1,5 @@
 name: mantra_biometric
-description: A new Flutter plugin project.
+description: Mantra biometric plugin for authentication
 version: 0.0.1
 homepage:
 
@@ -8,6 +8,7 @@ environment:
   flutter: ">=2.5.0"
 
 dependencies:
+  collection: ^1.17.0
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
