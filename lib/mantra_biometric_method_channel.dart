@@ -10,7 +10,7 @@ class MethodChannelMantraBiometric extends MantraBiometricPlatform {
   final methodChannel = const MethodChannel('mantra_biometric');
 
   @override
-  Future<String?> captureFingurePrint(String pidOptions) async {
+  Future<String?> captureFingerPrint(String pidOptions) async {
     final result = await methodChannel.invokeMethod<String>('capture',{"pidOptions":pidOptions});
     return result;
   }

@@ -48,12 +48,12 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  scanFingurePrint() async {
+  scanFingerPrint() async {
     try {
       String wadh = "";
       String pidOptions =
           "<PidOptions ver=\"1.0\"> <Opts fCount=\"1\" fType=\"2\" pCount=\"0\" format=\"0\" pidVer=\"2.0\" wadh=\"$wadh\" timeout=\"20000\"  posh=\"UNKNOWN\" env=\"P\" /> </PidOptions>";
-      result = await _mantraBiometricPlugin.captureFingurePrint(pidOptions: pidOptions) ?? "";
+      result = await _mantraBiometricPlugin.captureFingerPrint(pidOptions: pidOptions) ?? "";
       
       setState(() {});
     } on RDClientNotFound catch (e) {
@@ -81,7 +81,7 @@ class _MyAppState extends State<MyApp> {
               height: 20,
             ),
             MaterialButton(
-              onPressed: scanFingurePrint,
+              onPressed: scanFingerPrint,
               child: const Text("Scan Fingure Print"),
             ),
             const SizedBox(

@@ -7,9 +7,9 @@ import 'package:collection/collection.dart';
 import 'mantra_biometric_platform_interface.dart';
 
 class MantraBiometric {
-  Future<String?> captureFingurePrint({required String pidOptions}) async {
+  Future<String?> captureFingerPrint({required String pidOptions}) async {
     try {
-      String? result = await MantraBiometricPlatform.instance.captureFingurePrint(pidOptions);
+      String? result = await MantraBiometricPlatform.instance.captureFingerPrint(pidOptions);
       if (result != null && result.isNotEmpty) {
         final xmlDocument = XmlDocument.parse(result);
         XmlElement? errorField = xmlDocument.findElements("PidData").firstOrNull?.findElements("Resp").firstOrNull;
