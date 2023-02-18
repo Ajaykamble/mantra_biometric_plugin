@@ -30,7 +30,7 @@ Supports Android,Web,Windows.
 * Plug in the Biometric device
 * On first time initialization bottom right prompt will instruct to unplug and replug the device
 * After connecting the USB connector for `Biometric device attached` prompt is seen on bottom right of the screen
-* After successful connection to server `Framework ready` to use prompt shows up
+* After successful connection to server `Framework ready to use` prompt shows up
 
 # Usage
 * To use this plugin, add `mantra_biometric` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/platform-integration/platform-channels).
