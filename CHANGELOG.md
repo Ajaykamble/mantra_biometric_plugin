@@ -4,4 +4,4 @@
 
 ## 0.0.2
 
-* Added support for web
+* Added Documentation for plugin
