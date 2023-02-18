@@ -23,10 +23,11 @@ abstract class MantraBiometricPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> captureFingerPrint(String pidOptions){
+  Future<String?> captureFingerPrint(String pidOptions) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
-  Future<String?> getDeviceInfo(){
+
+  Future<String?> getDeviceInfo() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }
