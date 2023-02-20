@@ -49,7 +49,7 @@ public class MantraBiometricPlugin implements FlutterPlugin, MethodCallHandler ,
           intent.setAction("in.gov.uidai.rdservice.fp.INFO");
           act.startActivityForResult(intent, 1);
         }catch (Exception e){
-          result.error( "ClientNotFound", e.getMessage(), "Install Client Application");
+          result.error("ClientNotFound", e.getMessage(), "Install Client Application");
         }
         break;
       case "capture":
