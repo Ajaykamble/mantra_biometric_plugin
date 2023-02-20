@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
     } on RDClientNotFound catch (e) {
       displyAlert("Install Clinet");
     } catch (e) {
-      displyAlert("Something Went Wrong $e");
+      displyAlert("Something Went Wrong");
     }
   }
 
@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
       log("${e.code}");
       displyAlert("Install Clinet");
     } catch (e) {
-      displyAlert("Something Went Wrong $e");
+      displyAlert("Something Went Wrong ${e.runtimeType} $e");
     }
   }
 
