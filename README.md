@@ -12,7 +12,7 @@ Supports Android,Web,Windows.
 
 | Android | iOS | MacOS | Web | Linux | Windows |
 | :-----: | :-: | :---: | :-: | :---: | :----: |
-|   ✔️    | ❌  |  ❌   | ❌  |  ❌   |   ❌   |
+|   ✔️    | ❌  |  ❌   | ✔️  |  ❌   |   ❌   |
 
 # Prerequisite
 
@@ -34,6 +34,14 @@ Supports Android,Web,Windows.
 
 # Usage
 * To use this plugin, add `mantra_biometric` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/platform-integration/platform-channels).
+
+## Flutter Web Support
+Please add the following snippet to your `web/index.html` inside `<head></head>` in your Flutter project.
+
+```javascript
+<script src="./assets/packages/mantra_biometric/assets/mantra.js" defer></script>
+
+```
 
 ## Example
 ```dart
