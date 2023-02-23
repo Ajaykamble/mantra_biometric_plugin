@@ -1,6 +1,6 @@
 name: mantra_biometric
 description: Mantra biometric plugin is to enable the biometric based aadhaar authentication with registered device concept implemented by UIDAI.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/Ajaykamble/mantra_biometric_plugin.git
 
 environment:
