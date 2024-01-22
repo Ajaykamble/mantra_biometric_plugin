@@ -8,3 +8,6 @@
 
 ## 0.0.3
 * Added Web support
+
+## 0.0.4
+* Fixed issues in web
